@@ -145,7 +145,6 @@ function getCovidData(formattedAddress) {
                 console.log("There was an error getting the covid data")
             }
         })
-
 }
 
 // Initialize and add the map
