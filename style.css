@@ -1,0 +1,265 @@
+body {
+    background-image: url("diego-jimenez-A-NVHPka9Rk-unsplash.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Merienda', cursive;
+    text-align: center;
+    margin: -40px;
+    /* padding: 0px; */
+}
+
+
+
+.hide {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: steelblue;
+}
+
+/*****START DISPLAY*****/
+/* header {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 50px;
+    border-radius: 10px;
+    width: 80%
+} */
+
+
+header p {
+    font-size: 35px;
+    color: white;
+    text-shadow: 1px 1px grey
+} /* switch colors around to get back to normal  */
+
+header p.api-info {
+    color: black;
+    font-size: 14px;
+    text-shadow: 1px 1px white;
+}
+
+.start-display {
+    height: 100vh;
+    box-shadow: 0 0 10px transparent;
+    padding: 50px;
+    margin-bottom: 30px;
+}
+
+h1.logo {
+    font-family: 'Merienda', cursive;
+    font-size: 75px;
+    margin-bottom: 150px;
+    text-shadow: 2px 2px black;
+}
+
+form {
+    padding: 30px;
+}
+
+form input {
+    height: 50px;
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0px;
+}
+
+form button {
+    height: 50px;
+    width: 100px;
+    background: #eee;
+    border: 0px;
+    border-radius: 5px;
+    margin-left: 10px;
+    box-shadow: 0 0 5px black;
+    font-size: 20px;
+}
+
+form a {
+    color: black;
+    text-decoration: none;
+}
+
+.weather-results {
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.weather-results h1 {
+    font-size: 40px;
+    color: black;
+    font-family: 'Merienda', cursive;
+}
+
+.weather-image {
+    width: 50%;
+}
+
+.weather-results {
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    background: rgba(230, 223, 223, 0.7);
+    border-radius: 5px;
+}
+
+.col-3,
+.result {
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    background: rgba(230, 223, 223, 0.7);
+    border-radius: 5px;
+}
+
+.result-description {
+    padding: 10px;
+    text-align: justify;
+    overflow: hidden;
+    font-size: 0.9em;
+} */
+
+.result-description h2 {
+    font-size: 1.3em;
+    font-family: 'Mergrim', sans-serif;
+    font-weight: 700;
+    ;
+}
+
+/***** RESPONSIVE DESIGN *****/
+
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    max-width: 1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 640px) {
+    .col-3 {
+        width: 30%;
+        display: inline-block;
+        vertical-align: text-top;
+    }
+}
+
+.map1 {
+    height: 600px; /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+    margin-bottom: 150px;
+}
+
+#covid-data {
+    display: flex;
+    flex-flow: column;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(230, 223, 223, 0.7);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#covid-data-message {
+    flex: 1 1 auto;
+    background-color: white;
+    margin-bottom: 20px;
+    color: black;
+}
+
+#covid-rating-wrapper {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#covid-rating-circle { 
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.crc-green {
+    background-color: lime;
+}
+
+.crc-yellow {
+    background-color: yellow;
+}
+
+.crc-red {
+    background-color: red;
+}
+
+
+/***** NAVIGATION *****/
+
+/* nav {
+    margin: 20px 0;
+} */
+
+/* button.category-button {
+    margin: 5px;
+    padding: 10px;
+    background: #fff;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+    font-family: 'Mergrim', sans-serif;
+    font-weight: 600;
+}
+
+button.selected {
+    background: #ccc;
+} */
+
+
+/***** RESULT DISPLAY *****/
+
+/* div .result-image {
+    width: 100%;
+    float: left;
+    height: 15em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-size: cover;
+    background-position: center center;
+} */
+
+/* #foursquare-results span {
+    display: inline-block;
+    height: 32px;
+    padding: 0;
+    vertical-align: top;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+#foursquare-results span.icon-text {
+    padding: 8px 4px 0 4px;
+}
+
+
+/***** FOOTER *****/
+
+/* footer {
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 125px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px black;
+} */
+
