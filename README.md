@@ -13,7 +13,7 @@ Open index.html in Chrome
 
 ***
 ### __Screenshot__
-![Open Road Travel Agency](https://user-images.githubusercontent.com/77814900/114222053-17201c80-993c-11eb-9f0f-51c25dd63e79.png)
+<!-- ![Open Road Travel Agency](https://user-images.githubusercontent.com/77814900/114222053-17201c80-993c-11eb-9f0f-51c25dd63e79.png) -->
 
 
 
@@ -30,7 +30,7 @@ Open index.html in Chrome
 - [jQuery](https://code.jquery.com/)
 - [StackOverflow](https://stackoverflow.com/questions/52248646/googlemaps-api-key-for-testing) 
 - [GoogleMapsAPI](https://console.cloud.google.com/apis/agreements?project=weather-tracker)
-- [CovidApi]
+- [CovidApi](http://api.covidtracking.com)
 
 ***
 ### __Links__
@@ -38,13 +38,13 @@ Open index.html in Chrome
 This project has been deployed and is live on GitHub. Click the links below.
 
 -  [Amy Smerlick GitHub Repository](https://github.com/amysmerlick)
--   [Weather Tracker](https://amysmerlick.github.io/WeatherTracker/)
+-   [Open Road Travel Agency](https://amysmerlick.github.io/Open-Road-Travel-Agency/)
 
 ***
 ### __License__
 
 The MIT License (MIT)
-Copyright © 2021 AmySmerlick
+Copyright © 2021 AmySmerlick, Muhammed Hassan, William Pate
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
