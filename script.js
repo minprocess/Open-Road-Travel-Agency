@@ -93,7 +93,7 @@ function getLatLng() {
         let lat = results[0].geometry.location.lat()
         let lng = results[0].geometry.location.lng()
         map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 8,
+            zoom: 12,
             center: { lat: lat, lng: lng},
         });
         // map.setCenter({ lat: lat, lng: lng })
