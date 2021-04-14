@@ -92,29 +92,33 @@ function getLatLng() {
         console.log(typeof results[0].geometry.location.lat())
         let lat = results[0].geometry.location.lat()
         let lng = results[0].geometry.location.lng()
-        map.setCenter({ lat: lat, lng: lng })
-        map.setZoom(15)
+        map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 8,
+            center: { lat: lat, lng: lng},
+        });
+        // map.setCenter({ lat: lat, lng: lng })
+        // map.setZoom(15)
         getCovidData(results[0].formatted_address)
     })
 }
 
 // Initialize and add the map
-function initMap() {
-    // The location of Uluru
-    const uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
-        center: uluru,
-    });
-    console.log("initmap map");
-    console.log(map);
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
-    });
-}   // end of function initMap
+// function initMap() {
+//     // The location of Uluru
+//     const uluru = { lat: -25.344, lng: 131.036 };
+//     // The map, centered at Uluru
+//     map = new google.maps.Map(document.getElementById("map"), {
+//         zoom: 4,
+//         center: uluru,
+//     });
+//     console.log("initmap map");
+//     console.log(map);
+//     // The marker, positioned at Uluru
+//     const marker = new google.maps.Marker({
+//         position: uluru,
+//         map: map,
+//     });
+// }   // end of function initMap
 
 function getCovidData(formattedAddress) {
     let splitArray = formattedAddress.split(',')   // ['Harrisburg', ' PA', ' USA']
