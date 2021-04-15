@@ -80,6 +80,7 @@ function activatePlacesSearch() {
 }
 
 $('#city-search').click(function (event) {
+    $(".covid-container").removeClass("hide");
     console.log("search test")
     event.preventDefault();
     // $('.navigation').removeClass("hide");
