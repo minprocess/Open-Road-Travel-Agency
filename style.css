@@ -154,6 +154,7 @@ form a {
     }
 }
 
+
 .map1 {
     height: 600px; /* The height is 400 pixels */
     width: 800px;  /* The width is the width of the web page */
@@ -172,12 +173,14 @@ form a {
     margin-bottom: 10px;
 }
 
-#covid-data-message {
+#covid-data-message,
+#covid-message2 {
     flex: 1 1 auto;
-    background-color: white;
-    margin-bottom: 20px;
+    /* background-color: white; */
+    background: rgba(230, 223, 223, 0.7);
     color: black;
 }
+
 
 #covid-rating-wrapper {
     display: flex;
@@ -190,6 +193,8 @@ form a {
     height: 100px;
     width: 100px;
     border-radius: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .crc-green {
@@ -256,16 +261,10 @@ button.selected {
 /***** FOOTER *****/
 
 footer {
-<<<<<<< HEAD
     /* background-color: rgba(255, 255, 255, 0.7); */
     height: 125px;
     padding: 20px;
     margin-top: 20px;
     /* box-shadow: 0 0 10px black; */
-=======
-    height: 125px;
-    padding: 20px;
-    margin-top: 20px;
->>>>>>> 726988e092b392084f5f22839ebe8476b9adccce
 }
 
