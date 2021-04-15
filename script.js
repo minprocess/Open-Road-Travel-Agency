@@ -137,38 +137,72 @@ function getCovidData(formattedAddress) {
         })
 }
 
+
+
     // var FOURSQUARE_SEARCH_URL = "https://api.foursquare.com/v2/venues/explore?client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET + "&v=YYYYMMDD";
     // var CLIENT_ID = "3HOWAEZDHCEUXJXWUAM5FWOZRF1QLJUFQOLPFXGD4YJMWTG0";
     // var CLIENT_SECRET = "NJVMVP2OA1HFOJNDZWZBBR45CB0ZHVL2EK4ECHLLPVKBG4XN";
 
+    //retrieve data from FourSquare API
 // function getFourSquareData() {
-//         $('.category-button').click(function () {
-//                 let city = $('.search-query').val();
-//                 let category = $(this).text();
-//                 $.ajax(FOURSQUARE_SEARCH_URL, {
-//                         data: {
-//                                 near: city,
-//                                 venuePhotos: 1,
-//                                 limit: 9,
-//                                 query: 'recommended',
-//                                 section: category,
-//                             },
-//                             dataType: 'json',
-//                             type: 'GET',
-//                             success: function (data) {
-//                                     try {
-//                                             let results = data.response.groups[0].items.map(function (item, index) {
-//                                                     return displayResults(item);
-//                                                 });
-//                     $('#foursquare-results').html(results);
-//                     scrollPageTo('#foursquare-results', 15);
-//                 } catch (e) {
-//                         $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
-//                     }
-//                 },
-//                 error: function () {
-//                         $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
-//                     }
-//                 });
-//             });
-//         }
+    //     $('.category-button').click(function () {
+        //         let city = $('.search-query').val();
+        //         let category = $(this).text();
+        //         $.ajax(FOURSQUARE_SEARCH_URL, {
+            //             data: {
+                //                 near: city,
+                //                 venuePhotos: 1,
+                //                 limit: 9,
+                //                 query: 'recommended',
+                //                 section: category,
+                //             },
+                //             dataType: 'json',
+                //             type: 'GET',
+                //             success: function (data) {
+                    //                 try {
+                        //                     let results = data.response.groups[0].items.map(function (item, index) {
+                            //                         return displayResults(item);
+                            //                     });
+//$('#foursquare-results').html(results);
+//scrollPageTo('#foursquare-results', 15);
+//} catch (e) {
+    //                     $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
+    //                 }
+    //             },
+    //             error: function () {
+        //                 $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
+        //             }
+        //         });
+        //     });
+        // }
+function getFourSquareData() {
+        $('.category-button').click(function () {
+                let city = $('.search-query').val();
+                let category = $(this).text();
+                $.ajax(FOURSQUARE_SEARCH_URL, {
+                        data: {
+                                near: city,
+                                venuePhotos: 1,
+                                limit: 9,
+                                query: 'recommended',
+                                section: category,
+                            },
+                            dataType: 'json',
+                            type: 'GET',
+                            success: function (data) {
+                                    try {
+                                            let results = data.response.groups[0].items.map(function (item, index) {
+                                                    return displayResults(item);
+                                                });
+                    $('#foursquare-results').html(results);
+                    scrollPageTo('#foursquare-results', 15);
+                } catch (e) {
+                        $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
+                    }
+                },
+                error: function () {
+                        $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
+                    }
+                });
+            });
+        }
