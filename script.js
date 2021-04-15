@@ -29,6 +29,11 @@ function scrollPageTo(){
     
 // }
 
+function funCarousel(){
+$(document).ready(function(){
+$('.carousel').carousel();
+ });}
+
 
 function displayWeather(data) {
     return `
