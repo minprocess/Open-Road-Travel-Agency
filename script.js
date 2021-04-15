@@ -36,24 +36,24 @@ function displayWeather(data) {
     `;
 }
 
-function displayResults(result) {
-    return `
-    <div class="result col-3">
-    <div class="result-description">
-    <h2 class="result-name"><a href="${result.venue.url}" target="_blank">${result.venue.name}</a></h2>
-    <span class="icon">
-    <img src="${result.venue.categories[0].icon.prefix}bg_32${result.venue.categories[0].icon.suffix}" alt="category-icon">
-    </span>
-    <span class="icon-text">
-    ${result.venue.categories[0].name}
-    </span>
-    <p class="result-address">${result.venue.location.formattedAddress[0]}</p>
-    <p class="result-address">${result.venue.location.formattedAddress[1]}</p>
-    <p class="result-address">${result.venue.location.formattedAddress[2]}</p>
-    </div>
-    </div>
-    `;
-}
+// function displayResults(result) {
+//     return `
+//     <div class="result col-3">
+//     <div class="result-description">
+//     <h2 class="result-name"><a href="${result.venue.url}" target="_blank">${result.venue.name}</a></h2>
+//     <span class="icon">
+//     <img src="${result.venue.categories[0].icon.prefix}bg_32${result.venue.categories[0].icon.suffix}" alt="category-icon">
+//     </span>
+//     <span class="icon-text">
+//     ${result.venue.categories[0].name}
+//     </span>
+//     <p class="result-address">${result.venue.location.formattedAddress[0]}</p>
+//     <p class="result-address">${result.venue.location.formattedAddress[1]}</p>
+//     <p class="result-address">${result.venue.location.formattedAddress[2]}</p>
+//     </div>
+//     </div>
+//     `;
+// }
 
 function enterLocation() {
     
@@ -71,14 +71,12 @@ function activatePlacesSearch() {
 $('#city-search').click(function (event) {
     console.log("search test")
     event.preventDefault();
-    initMap();
     // $('.navigation').removeClass("hide");
     $('#weather-display').html("");
     // $('#foursquare-results').html("");
     getWeatherData();
     //getFourSquareData();
     $('button').removeClass("selected");
-
     console.log("TEST")
     $('.category-button').click(function () {
         $('button').removeClass("selected");
@@ -112,24 +110,6 @@ function getLatLng() {
     })
 }
 
-// Initialize and add the map
-// function initMap() {
-//     // The location of Uluru
-//     const uluru = { lat: -25.344, lng: 131.036 };
-//     // The map, centered at Uluru
-//     map = new google.maps.Map(document.getElementById("map"), {
-//         zoom: 4,
-//         center: uluru,
-//     });
-//     console.log("initmap map");
-//     console.log(map);
-//     // The marker, positioned at Uluru
-//     const marker = new google.maps.Marker({
-//         position: uluru,
-//         map: map,
-//     });
-// }   // end of function initMap
-
 function getCovidData(formattedAddress) {
     let splitArray = formattedAddress.split(',')   // ['Harrisburg', ' PA', ' USA']
     let splitStateCode = splitArray[1].trim()
@@ -157,57 +137,38 @@ function getCovidData(formattedAddress) {
         })
 }
 
-// Initialize and add the map
-function initMap() {
-    // The location of Uluru
-    const uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
-        center: uluru,
-    });
-    console.log("initmap map");
-    console.log(map);
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
-    });
-}   // end of function initMap
+    // var FOURSQUARE_SEARCH_URL = "https://api.foursquare.com/v2/venues/explore?client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET + "&v=YYYYMMDD";
+    // var CLIENT_ID = "3HOWAEZDHCEUXJXWUAM5FWOZRF1QLJUFQOLPFXGD4YJMWTG0";
+    // var CLIENT_SECRET = "NJVMVP2OA1HFOJNDZWZBBR45CB0ZHVL2EK4ECHLLPVKBG4XN";
 
-    var FOURSQUARE_SEARCH_URL = "https://api.foursquare.com/v2/venues/explore?client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET + "&v=YYYYMMDD";
-    var CLIENT_ID = "3HOWAEZDHCEUXJXWUAM5FWOZRF1QLJUFQOLPFXGD4YJMWTG0";
-    var CLIENT_SECRET = "NJVMVP2OA1HFOJNDZWZBBR45CB0ZHVL2EK4ECHLLPVKBG4XN";
-
-    //retrieve data from FourSquare API
-function getFourSquareData() {
-        $('.category-button').click(function () {
-                let city = $('.search-query').val();
-                let category = $(this).text();
-                $.ajax(FOURSQUARE_SEARCH_URL, {
-                        data: {
-                                near: city,
-                                venuePhotos: 1,
-                                limit: 9,
-                                query: 'recommended',
-                                section: category,
-                            },
-                            dataType: 'json',
-                            type: 'GET',
-                            success: function (data) {
-                                    try {
-                                            let results = data.response.groups[0].items.map(function (item, index) {
-                                                    return displayResults(item);
-                                                });
-                    $('#foursquare-results').html(results);
-                    scrollPageTo('#foursquare-results', 15);
-                } catch (e) {
-                        $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
-                    }
-                },
-                error: function () {
-                        $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
-                    }
-                });
-            });
-        }
+// function getFourSquareData() {
+//         $('.category-button').click(function () {
+//                 let city = $('.search-query').val();
+//                 let category = $(this).text();
+//                 $.ajax(FOURSQUARE_SEARCH_URL, {
+//                         data: {
+//                                 near: city,
+//                                 venuePhotos: 1,
+//                                 limit: 9,
+//                                 query: 'recommended',
+//                                 section: category,
+//                             },
+//                             dataType: 'json',
+//                             type: 'GET',
+//                             success: function (data) {
+//                                     try {
+//                                             let results = data.response.groups[0].items.map(function (item, index) {
+//                                                     return displayResults(item);
+//                                                 });
+//                     $('#foursquare-results').html(results);
+//                     scrollPageTo('#foursquare-results', 15);
+//                 } catch (e) {
+//                         $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
+//                     }
+//                 },
+//                 error: function () {
+//                         $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
+//                     }
+//                 });
+//             });
+//         }
