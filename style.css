@@ -186,7 +186,11 @@ form a {
     margin-bottom: 20px;
 }
 
-
+.card{
+    background-image: url(../Open-Road-Travel-Agency/covid-img.JPG);
+    background-repeat: cover;
+    background-blend-mode: lighten
+}
 
 
 #covid-rating-wrapper {
