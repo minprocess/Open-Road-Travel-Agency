@@ -71,7 +71,6 @@ $('#city-search').click(function (event) {
     getWeatherData();
     //getFourSquareData();
     $('button').removeClass("selected");
-
     console.log("TEST")
     $('.category-button').click(function () {
         $('button').removeClass("selected");
@@ -95,6 +94,12 @@ function getLatLng() {
             zoom: 12,
             center: { lat: lat, lng: lng},
         });
+        const marker = new google.maps.Marker({
+            position: { lat: lat, lng: lng},
+            map: map,
+        });
+        // map.setCenter({ lat: lat, lng: lng })
+        // map.setZoom(15)
         getCovidData(results[0].formatted_address)
     })
 }
@@ -109,7 +114,7 @@ function getCovidData(formattedAddress) {
             type: 'GET',
             success: function (data) {
                 console.log(data.positiveIncrease)
-                $('#covid-data-message').text(`The COVID rating for ${splitArray[0]}, ${splitArray[1]} any state with greater than 1000 cases/day will reflect red. If it is between 501 to 999 cases/day it will show yellow. If there are less than 500 companies it will show green.`)
+                $('#covid-data-message').text(`The COVID rating for ${splitArray[0]}, ${splitArray[1]}`)
                 if (data.positiveIncrease < 500) {
                     $('#covid-rating-circle').addClass('crc-green')
                 }
