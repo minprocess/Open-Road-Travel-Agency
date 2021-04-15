@@ -14,19 +14,13 @@ function getWeatherData() {
         success: function (data) {
             let widget = displayWeather(data);
             $('#weather-display').html(widget);
-            // scrollPageTo('#weather-display', 15);
+            scrollPageTo('#weather-display', 15);
            
         }
     });
 }
 function scrollPageTo(){
-    $(document).ready(function(){
-        $('#city-search').click(function(){
-          var id = "#city-search" + $(this).attr('goto');
-          var top = $(id).position().top;
-          $('html').scrollTop(top);
-        });
-      });
+    document.getElementById('weather-display').scrollIntoView(true);
 }
 
 
@@ -105,8 +99,12 @@ function getLatLng() {
         let lat = results[0].geometry.location.lat()
         let lng = results[0].geometry.location.lng()
         map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 8,
+            zoom: 12,
             center: { lat: lat, lng: lng},
+        });
+        const marker = new google.maps.Marker({
+            position: { lat: lat, lng: lng},
+            map: map,
         });
         // map.setCenter({ lat: lat, lng: lng })
         // map.setZoom(15)
