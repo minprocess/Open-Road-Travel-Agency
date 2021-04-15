@@ -96,6 +96,10 @@ function getLatLng() {
             zoom: 12,
             center: { lat: lat, lng: lng},
         });
+        const marker = new google.maps.Marker({
+            position: { lat: lat, lng: lng},
+            map: map,
+        });
         // map.setCenter({ lat: lat, lng: lng })
         // map.setZoom(15)
         getCovidData(results[0].formatted_address)
