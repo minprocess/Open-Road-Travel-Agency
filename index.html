@@ -8,6 +8,7 @@
     <title>Trip Planner</title>
     <style>
     </style>
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -130,8 +131,18 @@
             <p class="api-info">Using Google Maps and Covid API</p>
         </footer>
     </main>
+   
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/materialize.js"></script>
+      <script src="js/init.js"></script>
+      <script type="text/javascript">
+
+        $(document).ready(function(){
+      $('.carousel').carousel();
+         });
+    </script>
+
     <script type="text/javascript" src="script.js"></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3F33vDvVAnomD57XeDJrdB1DEBRu19IY"></script> -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3F33vDvVAnomD57XeDJrdB1DEBRu19IY&libraries=places&callback=activatePlacesSearch"></script>
