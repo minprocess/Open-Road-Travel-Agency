@@ -19,9 +19,15 @@ function getWeatherData() {
         }
     });
 }
+
 function scrollPageTo(){
-    document.getElementById('weather-display').scrollIntoView(true);
+    document.getElementById('map').scrollIntoView(true);
 }
+
+
+// function pageRefresh(){
+    
+// }
 
 
 function displayWeather(data) {
@@ -121,14 +127,20 @@ function getCovidData(formattedAddress) {
             success: function (data) {
                 console.log(data.positiveIncrease)
                 $('#covid-data-message').text(`The COVID rating for ${splitArray[0]}, ${splitArray[1]}`)
+                // $('#covid-message2').text('Green = <500 cases Yellow = <1000 cases Red = >100 cases')
+
                 if (data.positiveIncrease < 500) {
                     $('#covid-rating-circle').addClass('crc-green')
+                    $('#covid-message2').text('Green indicates that there are less than 500 positive cases for the searched location.')
                 }
                 else if (data.positiveIncrease < 1000) {
+
                     $('#covid-rating-circle').addClass('crc-yellow')
+                    $('#covid-message2').text('Yellow indicates that there are less than 1,000 positive cases for the searched location.')
                 }
                 else {
                     $('#covid-rating-circle').addClass('crc-red')
+                    $('#covid-message2').text('Red indicates that there are more than 1,000 positive cases for the searched location')
                 }
             },
             error: function () {
