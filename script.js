@@ -65,7 +65,6 @@ function activatePlacesSearch() {
 $('#city-search').click(function (event) {
     console.log("search test")
     event.preventDefault();
-    initMap();
     // $('.navigation').removeClass("hide");
     $('#weather-display').html("");
     // $('#foursquare-results').html("");
@@ -96,29 +95,9 @@ function getLatLng() {
             zoom: 12,
             center: { lat: lat, lng: lng},
         });
-        // map.setCenter({ lat: lat, lng: lng })
-        // map.setZoom(15)
         getCovidData(results[0].formatted_address)
     })
 }
-
-// Initialize and add the map
-// function initMap() {
-//     // The location of Uluru
-//     const uluru = { lat: -25.344, lng: 131.036 };
-//     // The map, centered at Uluru
-//     map = new google.maps.Map(document.getElementById("map"), {
-//         zoom: 4,
-//         center: uluru,
-//     });
-//     console.log("initmap map");
-//     console.log(map);
-//     // The marker, positioned at Uluru
-//     const marker = new google.maps.Marker({
-//         position: uluru,
-//         map: map,
-//     });
-// }   // end of function initMap
 
 function getCovidData(formattedAddress) {
     let splitArray = formattedAddress.split(',')   // ['Harrisburg', ' PA', ' USA']
@@ -130,7 +109,7 @@ function getCovidData(formattedAddress) {
             type: 'GET',
             success: function (data) {
                 console.log(data.positiveIncrease)
-                $('#covid-data-message').text(`The COVID rating for ${splitArray[0]}, ${splitArray[1]}`)
+                $('#covid-data-message').text(`The COVID rating for ${splitArray[0]}, ${splitArray[1]} any state with greater than 1000 cases/day will reflect red. If it is between 501 to 999 cases/day it will show yellow. If there are less than 500 companies it will show green.`)
                 if (data.positiveIncrease < 500) {
                     $('#covid-rating-circle').addClass('crc-green')
                 }
@@ -147,23 +126,7 @@ function getCovidData(formattedAddress) {
         })
 }
 
-// Initialize and add the map
-function initMap() {
-    // The location of Uluru
-    const uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
-        center: uluru,
-    });
-    console.log("initmap map");
-    console.log(map);
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
-    });
-}   // end of function initMap
+
 
     // var FOURSQUARE_SEARCH_URL = "https://api.foursquare.com/v2/venues/explore?client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET + "&v=YYYYMMDD";
     // var CLIENT_ID = "3HOWAEZDHCEUXJXWUAM5FWOZRF1QLJUFQOLPFXGD4YJMWTG0";
@@ -189,9 +152,9 @@ function initMap() {
                         //                     let results = data.response.groups[0].items.map(function (item, index) {
                             //                         return displayResults(item);
                             //                     });
-//                     $('#foursquare-results').html(results);
-//                     scrollPageTo('#foursquare-results', 15);
-//                 } catch (e) {
+//$('#foursquare-results').html(results);
+//scrollPageTo('#foursquare-results', 15);
+//} catch (e) {
     //                     $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
     //                 }
     //             },

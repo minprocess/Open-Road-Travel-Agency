@@ -163,20 +163,22 @@ form a {
 #covid-data {
     display: flex;
     flex-flow: column;
-    width: 400px;
     align-items: center;
     justify-content: center;
-    background-color: rgba(230, 223, 223, 0.7);
+    background: rgba(230, 223, 223, 0.7);
+    color: black;
+    text-shadow: 1px 1px white;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    width: 800px;
+    height: 300px;
+    font-weight: bold;
 }
 
 #covid-data-message {
     flex: 1 1 auto;
-    background-color: white;
     margin-bottom: 20px;
-    color: black;
 }
 
 #covid-rating-wrapper {
@@ -184,6 +186,11 @@ form a {
     flex-flow: row;
     justify-content: center;
     align-items: center;
+
+}
+
+.covid-description {
+    color: red;
 }
 
 #covid-rating-circle { 
@@ -260,4 +267,5 @@ footer {
     padding: 20px;
     margin-top: 20px;
 }
+
 
