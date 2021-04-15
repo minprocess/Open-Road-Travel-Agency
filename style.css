@@ -35,7 +35,7 @@ a {
 header p {
     font-size: 35px;
     color: white;
-    text-shadow: 1px 1px grey
+    text-shadow: 1.5px 1.5px black;
 } /* switch colors around to get back to normal  */
 
 header p.api-info {
