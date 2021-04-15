@@ -63,8 +63,23 @@
                 
             </div>
         </div>
-     
-        <section class="weather row" id="weather-display">
+        
+        <section class="weather row">
+            <div class="col l6 s12" id="weather-display"></div>
+            <div class="col l6 s12">
+                <div class="card ligthen-2 hide covid-container" >
+                    <div class="card-content">
+                <div class id="covid-data-message"></div>
+                <div id="covid-message2">                    
+                </div>
+                <div id="covid-rating-wrapper">
+                    <div id="covid-rating-circle"></div>
+                    
+                </div>
+                </div>
+                
+                </div>
+            </div>
         </section>
         <!--HOPING FOUR SQUARE API WILL GIVE NIGHTLIFE AND SHOPS, KEEPING BUTTONS HERE FOR NOW AND CAN CHANGE WHEN NEEDED-->
         <!-- <nav role="navigation" class="navigation hide" id="results-navigation">
@@ -75,61 +90,20 @@
             </div> -->
         <!-- </nav> -->
 
-        <div class="container">
+        <!-- <div class="container">
             <div class="row">
                 <div class="col s12 l6 ligthen-2">
-                    <div class="card ligthen-2">
-                        <div class="card-content">
-                    <div class id="covid-data-message"></div>
-                    <div id="covid-message2">
-                        
-                    </div>
-                    <div id="covid-rating-wrapper">
-                        <div id="covid-rating-circle"></div>
-                        
-                    </div>
-                    </div>
-                    
-                    </div>
-                    
+                   
                 </div>
             </div>
-        </div>
-        
-        
-        
-         <!-- <div  id="covid-data" class="row">
-            
-            <div id="covid-data-message"></div>
-            <div id="covid-message2"></div>
-
-            <div id="covid-rating-wrapper">
-
-                <div id="covid-rating-circle"></div>
-                
-            </div>
-            
         </div> -->
-        </nav>
-
-        <!-- <div id="covid-data" class="row">
-            <div id="covid-data-message">
-            </div>
-            <div id="covid-rating-wrapper">
-            </div>
-            <div id="covid-rating-circle">             
-            </div>
-        </div> -->
-
-        <div class="map1 row" id="map">
+            
+       <div class="map1 row" id="map">
 
         <!-- hopefully the foursquare API results will post here-->
         <!-- <section id="foursquare-results" class="row"> -->
         </section>
 
-        <footer class="footer">
-            <p class="api-info">Using Google Maps and Covid API</p>
-        </footer>
     </main>
    
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -146,6 +120,9 @@
     <script type="text/javascript" src="script.js"></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3F33vDvVAnomD57XeDJrdB1DEBRu19IY"></script> -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3F33vDvVAnomD57XeDJrdB1DEBRu19IY&libraries=places&callback=activatePlacesSearch"></script>
+    <footer class="footer">
+        <p class="api-info">Using Google Maps and Covid API</p>
+    </footer>
 </body>
 
 </html>
