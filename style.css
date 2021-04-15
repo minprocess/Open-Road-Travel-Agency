@@ -155,8 +155,8 @@ form a {
 }
 
 .map1 {
-    height: 600px; /* The height is 400 pixels */
-    width: 800px;  /* The width is the width of the web page */
+    height: 600px;
+    width: 800px;
     margin: auto;
 }
 
@@ -172,7 +172,7 @@ form a {
     padding: 10px;
     margin-bottom: 10px;
     width: 500px;
-    height: 100px;
+    height: 200px;
     font-weight: bold;
 }
 
@@ -268,4 +268,7 @@ footer {
     margin-top: 20px;
 }
 
-
+.search-query {
+    color: white;
+    text-shadow: 1px 1px slategray;
+}

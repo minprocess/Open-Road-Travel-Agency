@@ -14,10 +14,15 @@ function getWeatherData() {
         success: function (data) {
             let widget = displayWeather(data);
             $('#weather-display').html(widget);
-            // scrollPageTo('#weather-display', 15);
+            scrollPageTo('#weather-display', 15);
+           
         }
     });
 }
+function scrollPageTo(){
+    document.getElementById('weather-display').scrollIntoView(true);
+}
+
 
 function displayWeather(data) {
     return `
@@ -31,26 +36,27 @@ function displayWeather(data) {
     `;
 }
 
-function displayResults(result) {
-    return `
-    <div class="result col-3">
-    <div class="result-description">
-    <h2 class="result-name"><a href="${result.venue.url}" target="_blank">${result.venue.name}</a></h2>
-    <span class="icon">
-    <img src="${result.venue.categories[0].icon.prefix}bg_32${result.venue.categories[0].icon.suffix}" alt="category-icon">
-    </span>
-    <span class="icon-text">
-    ${result.venue.categories[0].name}
-    </span>
-    <p class="result-address">${result.venue.location.formattedAddress[0]}</p>
-    <p class="result-address">${result.venue.location.formattedAddress[1]}</p>
-    <p class="result-address">${result.venue.location.formattedAddress[2]}</p>
-    </div>
-    </div>
-    `;
-}
+// function displayResults(result) {
+//     return `
+//     <div class="result col-3">
+//     <div class="result-description">
+//     <h2 class="result-name"><a href="${result.venue.url}" target="_blank">${result.venue.name}</a></h2>
+//     <span class="icon">
+//     <img src="${result.venue.categories[0].icon.prefix}bg_32${result.venue.categories[0].icon.suffix}" alt="category-icon">
+//     </span>
+//     <span class="icon-text">
+//     ${result.venue.categories[0].name}
+//     </span>
+//     <p class="result-address">${result.venue.location.formattedAddress[0]}</p>
+//     <p class="result-address">${result.venue.location.formattedAddress[1]}</p>
+//     <p class="result-address">${result.venue.location.formattedAddress[2]}</p>
+//     </div>
+//     </div>
+//     `;
+// }
 
 function enterLocation() {
+    
 }
 
 //autocomplete location name in form
@@ -131,41 +137,38 @@ function getCovidData(formattedAddress) {
         })
 }
 
-
-
     // var FOURSQUARE_SEARCH_URL = "https://api.foursquare.com/v2/venues/explore?client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET + "&v=YYYYMMDD";
     // var CLIENT_ID = "3HOWAEZDHCEUXJXWUAM5FWOZRF1QLJUFQOLPFXGD4YJMWTG0";
     // var CLIENT_SECRET = "NJVMVP2OA1HFOJNDZWZBBR45CB0ZHVL2EK4ECHLLPVKBG4XN";
 
-    //retrieve data from FourSquare API
 // function getFourSquareData() {
-    //     $('.category-button').click(function () {
-        //         let city = $('.search-query').val();
-        //         let category = $(this).text();
-        //         $.ajax(FOURSQUARE_SEARCH_URL, {
-            //             data: {
-                //                 near: city,
-                //                 venuePhotos: 1,
-                //                 limit: 9,
-                //                 query: 'recommended',
-                //                 section: category,
-                //             },
-                //             dataType: 'json',
-                //             type: 'GET',
-                //             success: function (data) {
-                    //                 try {
-                        //                     let results = data.response.groups[0].items.map(function (item, index) {
-                            //                         return displayResults(item);
-                            //                     });
-//$('#foursquare-results').html(results);
-//scrollPageTo('#foursquare-results', 15);
-//} catch (e) {
-    //                     $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
-    //                 }
-    //             },
-    //             error: function () {
-        //                 $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
-        //             }
-        //         });
-        //     });
-        // }
+//         $('.category-button').click(function () {
+//                 let city = $('.search-query').val();
+//                 let category = $(this).text();
+//                 $.ajax(FOURSQUARE_SEARCH_URL, {
+//                         data: {
+//                                 near: city,
+//                                 venuePhotos: 1,
+//                                 limit: 9,
+//                                 query: 'recommended',
+//                                 section: category,
+//                             },
+//                             dataType: 'json',
+//                             type: 'GET',
+//                             success: function (data) {
+//                                     try {
+//                                             let results = data.response.groups[0].items.map(function (item, index) {
+//                                                     return displayResults(item);
+//                                                 });
+//                     $('#foursquare-results').html(results);
+//                     scrollPageTo('#foursquare-results', 15);
+//                 } catch (e) {
+//                         $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
+//                     }
+//                 },
+//                 error: function () {
+//                         $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
+//                     }
+//                 });
+//             });
+//         }
