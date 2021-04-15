@@ -255,11 +255,11 @@ button.selected {
 
 /***** FOOTER *****/
 
-/* footer {
-    background-color: rgba(255, 255, 255, 0.7);
+footer {
+    /* background-color: rgba(255, 255, 255, 0.7); */
     height: 125px;
     padding: 20px;
     margin-top: 20px;
-    box-shadow: 0 0 10px black;
-} */
+    /* box-shadow: 0 0 10px black; */
+}
 
