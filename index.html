@@ -20,14 +20,16 @@
             <header class="row" role="banner">
                 <h1 class="logo">Open Road Travel Agency</h1>
                 <p>Searh a location within the U.S. to find the current weather, Google Map view, and Covid case information..</p>
+                <!-- The following link will open the url in a new/blank tab in the browser -->
+                <p><a href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html" target=_blank>Keep Up With CDC Travel Guidelines</a></p>
                 <p class="api-info">Using Google Maps and Covid API</p>
             </header>
 
             <form action="#" class="search-form row" id="search-query-form">
                 <input type="text" placeholder="Enter a city" class="search-query" id="search-term" required>
               <button id="city-search" type="submit" class="submit-button">Search</button>
-              <button class= "reloadPage" type="Clear">Refresh</button>
-            </form>          
+             
+            </form>       
         </div>
      
         <section class="weather row" id="weather-display">
@@ -45,15 +47,10 @@
             <div class="row">
                 <div class="col s12 l6">
                     <div class="card">
-                        <div class="card-image">
-                            <img src="" alt+"">
-                        </div>
                         <div class="card-content">
                     <div class id="covid-data-message"></div>
                     <div id="covid-message2">
-                        <!-- <div class="card-action">
-                            <a href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html">Keep Up With CDC Travel Guidelines</a>
-                        </div> -->
+                        
                     </div>
                     <div id="covid-rating-wrapper">
                         <div id="covid-rating-circle"></div>
@@ -69,12 +66,7 @@
         
         
         
-        
-        
-        
-        
-        
-        <!-- <div  id="covid-data" class="row">
+         <!-- <div  id="covid-data" class="row">
             
             <div id="covid-data-message"></div>
             <div id="covid-message2"></div>
