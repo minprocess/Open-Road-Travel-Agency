@@ -9,10 +9,11 @@ function activatePlacesSearch() {
     let autocomplete = new google.maps.places.Autocomplete(input, options);
 }
 
-
 //autocomplete location name in form
 function getWeatherData() {
     let city = $('.search-query').val();
+    console.log("city")
+    console.log(city)
     $.ajax("https://api.openweathermap.org/data/2.5/weather?id=524901&APPID=d86b9843fdc4941e520f985922146256", {
         data: {
             units: 'imperial',
@@ -23,8 +24,7 @@ function getWeatherData() {
         success: function (data) {
             let widget = displayWeather(data);
             $('#weather-display').html(widget);
-            scrollPageTo('#weather-display', 15);
-           
+            scrollPageTo('#weather-display', 15);           
         }
     });
 }
@@ -61,14 +61,11 @@ function enterLocation() {
 }
 
 $('#city-search').click(function (event) {
-    $(".covid-container").removeClass("hide");
+    // $(".covid-container").removeClass("hide");
     console.log("search test")
     event.preventDefault();
-    // $('.navigation').removeClass("hide");
     $('#weather-display').html("");
-    // $('#foursquare-results').html("");
     getWeatherData();
-    //getFourSquareData();
     $('button').removeClass("selected");
     console.log("TEST")
     $('.category-button').click(function () {
@@ -110,6 +107,8 @@ function getCovidData(formattedAddress) {
             dataType: 'json',
             type: 'GET',
             success: function (data) {
+                $(".covid-container").removeClass("hide");
+                console.log("covidSuccessful")
                 console.log(data.positiveIncrease)
                 $('#covid-data-message').text(`The COVID rating for ${splitArray[0]}, ${splitArray[1]}`)
                 // $('#covid-message2').text('Green = <500 cases Yellow = <1000 cases Red = >100 cases')
