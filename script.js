@@ -1,4 +1,4 @@
-var WEATHER_SEARCH_URL = "https://api.openweathermap.org/data/2.5/weather?id=524901&APPID=d86b9843fdc4941e520f985922146256";
+// var WEATHER_SEARCH_URL = "https://api.openweathermap.org/data/2.5/weather?id=524901&APPID=d86b9843fdc4941e520f985922146256";
 let map;
 
 function activatePlacesSearch() {
@@ -13,7 +13,7 @@ function activatePlacesSearch() {
 //autocomplete location name in form
 function getWeatherData() {
     let city = $('.search-query').val();
-    $.ajax(WEATHER_SEARCH_URL, {
+    $.ajax("https://api.openweathermap.org/data/2.5/weather?id=524901&APPID=d86b9843fdc4941e520f985922146256", {
         data: {
             units: 'imperial',
             q: city
