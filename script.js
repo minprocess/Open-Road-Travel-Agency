@@ -156,7 +156,7 @@ function getFourSquareData() {
             console.log("square fuction 1")
                 let city = $('.search-query').val();
                 let category = $(this).text();
-                $.ajax(`https://api.foursquare.com/v2/venues/search?ll=${lat},${lng}&client_id=3HOWAEZDHCEUXJXWUAM5FWOZRF1QLJUFQOLPFXGD4YJMWTG0&client_secret=NJVMVP2OA1HFOJNDZWZBBR45CB0ZHVL2EK4ECHLLPVKBG4XN&query=tacos&section=food&limit=10&v=20210412`, {
+                $.ajax(`https://api.foursquare.com/v2/venues/search?ll=${lat},${lng}&client_id=3HOWAEZDHCEUXJXWUAM5FWOZRF1QLJUFQOLPFXGD4YJMWTG0&client_secret=NJVMVP2OA1HFOJNDZWZBBR45CB0ZHVL2EK4ECHLLPVKBG4XN&query=pizza&section=food&limit=10&v=20210412`, {
                         data: {
                                 near: city,
                                 // venuePhotos: 1,
