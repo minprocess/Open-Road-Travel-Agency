@@ -65,6 +65,7 @@ $('#city-search').click(function (event) {
     event.preventDefault();
     $('#weather-display').html("");
     getWeatherData();
+    getFourSquareData()
     $('button').removeClass("selected");
     console.log("TEST")
     $('.category-button').click(function () {
@@ -132,3 +133,51 @@ function getCovidData(formattedAddress) {
         })
 
 }
+ // retrieve data from FourSquare API
+ function getFourSquareData() {
+
+
+    let location = $('.search-query').val()
+  let geocoder = new google.maps.Geocoder()
+  geocoder.geocode({ "address": location }, function (results, status) {
+      
+      let lat = results[0].geometry.location.lat()
+      let lng = results[0].geometry.location.lng()
+      console.log(lat)
+    
+
+  
+          console.log("square fuction 1")
+              let city = $('.search-query').val();
+              let category = $(this).text();
+              $.ajax(`https://api.foursquare.com/v2/venues/search?ll=${lat},${lng}&client_id=3HOWAEZDHCEUXJXWUAM5FWOZRF1QLJUFQOLPFXGD4YJMWTG0&client_secret=NJVMVP2OA1HFOJNDZWZBBR45CB0ZHVL2EK4ECHLLPVKBG4XN&query=pizza&section=food&limit=10&v=20210412`, {
+                      data: {
+                              near: city,
+                              // venuePhotos: 1,
+                              // limit: 9,
+                              // query: 'tacos',
+                              // section: category,
+                              // name: name,
+                          },
+                          dataType: 'json',
+                          type: 'GET',
+                          success: function (data) {
+                              console.log(data)
+                                  try {
+                                          let results = data.response.groups[0].items.map(function (item, index) {
+                                                  return displayResults(item);
+                                              });
+$('#foursquare-results').html(results);
+scrollPageTo('#foursquare-results', 15);
+} catch (e) {
+                      $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
+                  }
+              },
+              error: function () {
+                      $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
+                  }
+              });
+
+          })
+          
+      }
