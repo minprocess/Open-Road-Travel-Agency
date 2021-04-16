@@ -9,7 +9,6 @@ As a team, we conceived and executed a design that solves a real-world problem b
 ***
 ### __Installation__
 
-
 Open index.html in Chrome
 
 ***

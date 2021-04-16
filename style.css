@@ -52,7 +52,7 @@ header p.api-info {
     margin-bottom: 10px;
 }
 
-h1.logo {
+h1 {
     font-family: 'Merienda', cursive;
     font-size: 75px;
     margin-bottom: 100px;
@@ -206,6 +206,11 @@ footer {
 
 }
 
+.cdctravel {
+    color: cornflowerblue;
+    text-shadow: 1.5px 1.5px black;
+    font-size: 40px;
+}
 
 /***** NAVIGATION *****/
 
