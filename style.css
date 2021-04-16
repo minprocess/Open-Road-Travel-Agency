@@ -59,7 +59,7 @@ h1.logo {
     text-shadow: 2px 2px black;
 }
 
-form {
+/* form {
     padding: 30px;
 }
 
@@ -69,9 +69,9 @@ form input {
     padding: 10px;
     border-radius: 5px;
     border: 0px;
-}
+} */
 
-form button {
+/* form button {
     height: 50px;
     width: 100px;
     background: #eee;
@@ -80,7 +80,7 @@ form button {
     margin-left: 10px;
     box-shadow: 0 0 5px black;
     font-size: 20px;
-}
+} */
 
 form a {
     color: black;
@@ -102,7 +102,7 @@ form a {
     padding: 10px;
     width: 100%;
     background: rgba(230, 223, 223, 0.7);
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
     border-radius: 5px;
     text-align: center;
 }
@@ -199,7 +199,7 @@ footer {
 
 .search-query {
     background: rgba(230, 223, 223, 0.7);
-    backdrop-filter: blur(7px);
+    /* backdrop-filter: blur(7px); */
     color: white;
     text-shadow: 1px 1px slategray;
     font-family: 'Roboto', sans-serif;
