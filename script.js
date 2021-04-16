@@ -3,7 +3,7 @@ let map;
 
 function activatePlacesSearch() {
     let options = {
-        types: ['(regions)']
+        types: ['(cities)']
     };
     let input = document.getElementById('search-term');
     let autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -65,8 +65,10 @@ $('#city-search').click(function (event) {
     console.log("search test")
     event.preventDefault();
     $('#weather-display').html("");
-    getWeatherData();
-    getFourSquareData();
+    let errMsgEl = document.getElementById("error-msg")
+    errMsgEl.textContent = ""
+    getLatLng()
+
     $('button').removeClass("selected");
     console.log("TEST")
     $('.category-button').click(function () {
@@ -74,28 +76,59 @@ $('#city-search').click(function (event) {
         $(this).addClass("selected");
     });
 
-    getLatLng()
+
 });
 
 function getLatLng() {
     let location = $('.search-query').val()
+    console.log("location")
+    console.log(location)
+    var options = {
+        types: ['(cities)'],
+        componentRestrictions: {country: 'us'}
+      };
     let geocoder = new google.maps.Geocoder()
+    
     geocoder.geocode({ "address": location }, function (results, status) {
         console.log("GEOCODER RESULTS")
+        console.log('status')
         console.log(status)
+ 
+        console.log("results");
         console.log(results)
-        console.log(typeof results[0].geometry.location.lat())
-        let lat = results[0].geometry.location.lat()
-        let lng = results[0].geometry.location.lng()
-        map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 12,
-            center: { lat: lat, lng: lng},
-        });
-        const marker = new google.maps.Marker({
-            position: { lat: lat, lng: lng},
-            map: map,
-        });
-        getCovidData(results[0].formatted_address)
+        //console.log(typeof results[0].geometry.location.lat())
+        if (status != "ZERO_RESULTS")
+        {
+            getWeatherData();
+
+            let lat = results[0].geometry.location.lat()
+            let lng = results[0].geometry.location.lng()
+    
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: { lat: lat, lng: lng},
+            });
+            const marker = new google.maps.Marker({
+                position: { lat: lat, lng: lng},
+                map: map,
+            });
+            getCovidData(results[0].formatted_address) 
+            getFourSquareData();   
+        }
+        else {
+            // status == ZERO_RESULTS
+            // Modal dialog here
+            let errMsgEl = document.getElementById("error-msg")
+            errMsgEl.textContent = "Can't find "+location
+            /*
+            delete map;
+            let mapEl = document.getElementById("map")
+            mapEl.innerHTML = "";
+            mapEl.val = "";
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+            */
+        }
     })
     
 }

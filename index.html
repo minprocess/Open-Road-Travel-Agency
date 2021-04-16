@@ -30,11 +30,22 @@
 
             <form action="#" class="search-form row" id="search-query-form">
                 <input type="text" placeholder="Enter a city" class="search-query" id="search-term" required>
-            </form>
+
             <button id="city-search" type="submit"
                 class="submit-button waves-effect floating pulse #0091ea light-blue accent-4 btn"></a>Locate</button>
             </form>
+            <p id="error-msg"></p>
         </div>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Modal Header</h4>
+              <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
+        
         <div class="map1 row" id="map"></div>
 
         <section class="weather row">
