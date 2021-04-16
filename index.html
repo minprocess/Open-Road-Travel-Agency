@@ -8,7 +8,7 @@
     <title>Trip Planner</title>
     <style>
     </style>
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -22,22 +22,22 @@
         <div class="start-display" id="start-page">
             <header class="row" role="banner">
                 <h1 class="logo">Open Road Travel Agency</h1>
-                <p>Searh a location within the U.S. to find the current weather, Google Map view, and Covid case information..</p>
+                <p>Searh a location within the U.S. to find the current weather, Google Map view, and Covid case
+                    information..</p>
                 <!-- The following link will open the url in a new/blank tab in the browser -->
-                <p><a href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html" target=_blank>Keep Up With CDC Travel Guidelines</a></p>
-                <p class="api-info">Using Google Maps and Covid API</p>
+                <p><a href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/index.html" target=_blank>Keep Up With
+                        CDC Travel Guidelines</a></p>
             </header>
 
             <form action="#" class="search-form row" id="search-query-form">
                 <input type="text" placeholder="Enter a city" class="search-query" id="search-term" required>
-              <!-- <button id="city-search" type="submit" class="submit-button">Search</button> -->
-             
-            </form>       
-                <button id="city-search" type="submit" class="submit-button waves-effect floating pulse #0091ea light-blue accent-4 btn"></a>Location</button>
-            </form>          
+            </form>
+            <button id="city-search" type="submit"
+                class="submit-button waves-effect floating pulse #0091ea light-blue accent-4 btn"></a>Location</button>
+            </form>
         </div>
-        <div class="container">
-            <!--CAROUSEL-->
+         <div class="container">
+
             <div class="carousel">
                 <a href="#one!" class="carousel-item">
                     <img src="..//Open-Road-Travel-Agency/images/img1.JPG" alt="">
@@ -60,24 +60,25 @@
                 <a href="#seven!" class="carousel-item">
                     <img src="../Open-Road-Travel-Agency/images/img7.JPG" alt="">
                 </a>
-                
+
             </div>
         </div>
-        
+        <div class="map1 row" id="map"></div>
+
         <section class="weather row">
             <div class="col l6 s12" id="weather-display"></div>
             <div class="col l6 s12">
-                <div class="card ligthen-2 hide covid-container" >
+                <div class="card ligthen-2 hide covid-container">
                     <div class="card-content">
-                <div class id="covid-data-message"></div>
-                <div id="covid-message2">                    
-                </div>
-                <div id="covid-rating-wrapper">
-                    <div id="covid-rating-circle"></div>
-                    
-                </div>
-                </div>
-                
+                        <div class id="covid-data-message"></div>
+                        <div id="covid-message2">
+                        </div>
+                        <div id="covid-rating-wrapper">
+                            <div id="covid-rating-circle"></div>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -97,33 +98,32 @@
                 </div>
             </div>
         </div> -->
-            
-       <div class="map1 row" id="map">
 
-        <!-- hopefully the foursquare API results will post here-->
-        <!-- <section id="foursquare-results" class="row"> -->
-        </section>
+            <!-- hopefully the foursquare API results will post here-->
+            <!-- <section id="foursquare-results" class="row"> -->
+            </section>
 
     </main>
-   
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/materialize.js"></script>
-      <script src="js/init.js"></script>
-      <script type="text/javascript">
+    <script src="js/init.js"></script>
+    <script type="text/javascript">
 
-        $(document).ready(function(){
-      $('.carousel').carousel();
-         });
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
     </script>
 
     <script type="text/javascript" src="script.js"></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3F33vDvVAnomD57XeDJrdB1DEBRu19IY"></script> -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3F33vDvVAnomD57XeDJrdB1DEBRu19IY&libraries=places&callback=activatePlacesSearch"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3F33vDvVAnomD57XeDJrdB1DEBRu19IY&libraries=places&callback=activatePlacesSearch"></script>
     <footer class="footer">
         <p class="api-info">Using Google Maps and Covid API</p>
     </footer>
 </body>
 
 </html>
-

@@ -1,6 +1,15 @@
 var WEATHER_SEARCH_URL = "https://api.openweathermap.org/data/2.5/weather?id=524901&APPID=d86b9843fdc4941e520f985922146256";
 let map;
 
+function activatePlacesSearch() {
+    let options = {
+        types: ['(regions)']
+    };
+    let input = document.getElementById('search-term');
+    let autocomplete = new google.maps.places.Autocomplete(input, options);
+}
+
+
 //autocomplete location name in form
 function getWeatherData() {
     let city = $('.search-query').val();
@@ -70,15 +79,6 @@ function enterLocation() {
     
 }
 
-//autocomplete location name in form
-function activatePlacesSearch() {
-    let options = {
-        types: ['(regions)']
-    };
-    let input = document.getElementById('search-term');
-    let autocomplete = new google.maps.places.Autocomplete(input, options);
-}
-
 $('#city-search').click(function (event) {
     $(".covid-container").removeClass("hide");
     console.log("search test")
@@ -116,8 +116,6 @@ function getLatLng() {
             position: { lat: lat, lng: lng},
             map: map,
         });
-        // map.setCenter({ lat: lat, lng: lng })
-        // map.setZoom(15)
         getCovidData(results[0].formatted_address)
     })
 }
@@ -154,73 +152,3 @@ function getCovidData(formattedAddress) {
             }
         })
 }
-
-
-
-    // var FOURSQUARE_SEARCH_URL = "https://api.foursquare.com/v2/venues/explore?client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET + "&v=YYYYMMDD";
-    // var CLIENT_ID = "3HOWAEZDHCEUXJXWUAM5FWOZRF1QLJUFQOLPFXGD4YJMWTG0";
-    // var CLIENT_SECRET = "NJVMVP2OA1HFOJNDZWZBBR45CB0ZHVL2EK4ECHLLPVKBG4XN";
-
-    //retrieve data from FourSquare API
-// function getFourSquareData() {
-    //     $('.category-button').click(function () {
-        //         let city = $('.search-query').val();
-        //         let category = $(this).text();
-        //         $.ajax(FOURSQUARE_SEARCH_URL, {
-            //             data: {
-                //                 near: city,
-                //                 venuePhotos: 1,
-                //                 limit: 9,
-                //                 query: 'recommended',
-                //                 section: category,
-                //             },
-                //             dataType: 'json',
-                //             type: 'GET',
-                //             success: function (data) {
-                    //                 try {
-                        //                     let results = data.response.groups[0].items.map(function (item, index) {
-                            //                         return displayResults(item);
-                            //                     });
-//$('#foursquare-results').html(results);
-//scrollPageTo('#foursquare-results', 15);
-//} catch (e) {
-    //                     $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
-    //                 }
-    //             },
-    //             error: function () {
-        //                 $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
-        //             }
-        //         });
-        //     });
-        // }
-function getFourSquareData() {
-        $('.category-button').click(function () {
-                let city = $('.search-query').val();
-                let category = $(this).text();
-                $.ajax(FOURSQUARE_SEARCH_URL, {
-                        data: {
-                                near: city,
-                                venuePhotos: 1,
-                                limit: 9,
-                                query: 'recommended',
-                                section: category,
-                            },
-                            dataType: 'json',
-                            type: 'GET',
-                            success: function (data) {
-                                    try {
-                                            let results = data.response.groups[0].items.map(function (item, index) {
-                                                    return displayResults(item);
-                                                });
-                    $('#foursquare-results').html(results);
-                    scrollPageTo('#foursquare-results', 15);
-                } catch (e) {
-                        $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
-                    }
-                },
-                error: function () {
-                        $('#foursquare-results').html("<div class='result'><p>Sorry! No Results Found.</p></div>");
-                    }
-                });
-            });
-        }

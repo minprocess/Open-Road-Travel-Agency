@@ -3,6 +3,10 @@
 
 # _**Introduction**_
 ***
+team, you will conceive and execute a design that solves a real-world problem by integrating data received from multiple server-side API requests. Because you will be working collaboratively, you will learn agile development methodologies and implement feature and bug fixes using the git branch workflow and pull requests. * Server-side APIs
+* Git branching workflow
+Be interactive (i.e., accept and respond to user input).
+
 
 
 ***
