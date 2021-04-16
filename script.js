@@ -10,10 +10,6 @@ function activatePlacesSearch() {
     let autocomplete = new google.maps.places.Autocomplete(input, options);
 }
 
-$(document).ready(function(){
-    $('.modal').modal();
-});
-
 //autocomplete location name in form
 function getWeatherData() {
     let city = $('.search-query').val();
@@ -81,7 +77,9 @@ function getLatLng() {
     geocoder.geocode({ "address": location }, function (results, status) {
         console.log("GEOCODER RESULTS")
         console.log(status)
+        console.log("status")
         console.log(results)
+        console.log("results")
         console.log(typeof results[0].geometry.location.lat())
         let lat = results[0].geometry.location.lat()
         let lng = results[0].geometry.location.lng()
