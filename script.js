@@ -10,11 +10,9 @@ function activatePlacesSearch() {
     let autocomplete = new google.maps.places.Autocomplete(input, options);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, options);
-  });
-
+$(document).ready(function(){
+    $('.modal').modal();
+});
 
 //autocomplete location name in form
 function getWeatherData() {
@@ -44,12 +42,6 @@ function scrollPageTo(){
 // function pageRefresh(){
     
 // }
-
-function funCarousel(){
-$(document).ready(function(){
-$('.carousel').carousel();
- });}
-
 
 function displayWeather(data) {
     return `
@@ -103,8 +95,6 @@ function getLatLng() {
         });
         getCovidData(results[0].formatted_address)
     })
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.initi(elems, options);
 }
 
 function getCovidData(formattedAddress) {
