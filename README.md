@@ -3,6 +3,12 @@
 
 # _**Introduction**_
 ***
+As a team we conceived and executed a design that solves a real-world problem by integrating data received from multiple server-side API requests. We collaboratively worked on establishing an idea, building a foundation, and adding the final touches. Using Agile Software Development practices, we typically met each day and  indicated daily tasks to be achieved individually. 
+ Throughout the process we ran into many errors and discrepancies. Working together we were able to work through most of the challenges and have a successful result. Our project features many
+ you will learn agile development methodologies and implement feature and bug fixes using the git branch workflow and pull requests. * Server-side APIs
+* Git branching workflow
+Be interactive (i.e., accept and respond to user input).
+
 
 
 ***
