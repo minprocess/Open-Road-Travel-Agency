@@ -60,7 +60,7 @@ function enterLocation() {
     
 }
 
-$('.city-search').click(function (event) {
+$('#city-search').click(function (event) {
     // $(".covid-container").removeClass("hide");
     console.log("search test")
     event.preventDefault();
