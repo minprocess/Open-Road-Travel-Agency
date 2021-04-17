@@ -147,8 +147,12 @@ form a {
 
 .map1 {
     height: 600px;
-    width: 800px;
+    width: 1000px;
     margin: auto;
+}
+.result-address {
+    color:black;
+    font-size: 25px;
 }
 
 #covid-data-message,

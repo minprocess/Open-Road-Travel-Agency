@@ -24,7 +24,7 @@ function getWeatherData() {
         success: function (data) {
             let widget = displayWeather(data);
             $('#weather-display').html(widget);
-            scrollPageTo('#weather-display', 15);           
+            // scrollPageTo('#weather-display', 15);           
         }
     });
 }
@@ -103,7 +103,8 @@ function getLatLng() {
                 map: map,
             });
             getCovidData(results[0].formatted_address) 
-            getFourSquareData();   
+            getFourSquareData();
+            scrollPageTo();   
         }
         else {
             // status == ZERO_RESULTS
@@ -188,6 +189,7 @@ function getFourSquareData() {
                     console.log(addr)
                     var tmp = data.response.venues[i].name + "\n" + data.response.venues[i].address
                     console.log("tmp", tmp)
+                    
                     addrEl.textContent = data.response.venues[i].name + "\n" + data.response.venues[i].location.address
                 }
                 /*
