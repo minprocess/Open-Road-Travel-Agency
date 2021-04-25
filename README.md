@@ -13,7 +13,7 @@ Open index.html in Chrome
 
 ***
 ### __Screenshot__
-<!-- ![Open Road Travel Agency](https://user-images.githubusercontent.com/77814900/114222053-17201c80-993c-11eb-9f0f-51c25dd63e79.png) -->
+![Open Road Travel Agency](https://user-images.githubusercontent.com/77814900/115997454-24324200-a5b1-11eb-9d46-9d9c010c099e.png)
 
 
 
