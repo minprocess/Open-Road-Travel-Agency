@@ -19,6 +19,10 @@ Open index.html in Chrome
 
 ***
 ### __Credits__
+My collaborators are:
+AmySmerlick, https://github.com/amysmerlick/
+Muhammed Hassan, https://github.com/mhknowledge/
+
 
 - [AgileAlliance](https://www.agilealliance.org/)
 - [W3schools](https://www.w3schools.com/)
@@ -39,8 +43,8 @@ Open index.html in Chrome
 
 This project has been deployed and is live on GitHub. Click the links below.
 
--  [Amy Smerlick GitHub Repository](https://github.com/amysmerlick)
--  [Open Road Travel Agency](https://amysmerlick.github.io/Open-Road-Travel-Agency/)
+-  [Open Road Travel Agency source code repository repository](https://github.com/minprocess/Open-Road-Travel-Agency)
+-  [Open Road Travel Agency GitHub pages](https://minprocess.github.io/Open-Road-Travel-Agency/)
 
 ***
 ### __License__
